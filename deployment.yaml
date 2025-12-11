@@ -6,11 +6,6 @@ metadata:
     app: raghu-app
 spec:
   replicas: 1
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 0
   selector:
     matchLabels:
       app: raghu-app
@@ -22,7 +17,7 @@ spec:
       containers:
         - name: raghu-container
           # Harness will replace this with the artifact image from CI.
-          image: us-central1-docker.pkg.dev/kubernetes-477004/php-app-repo/raghu:v2
+          image: <+artifacts.primary.image>
           ports:
             - containerPort: 80
        
