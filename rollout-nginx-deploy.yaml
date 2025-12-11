@@ -1,1 +1,21 @@
-
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: raghu-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: raghu-app
+  template:
+    metadata:
+      labels:
+        app: raghu-app
+    spec:
+      containers:
+        - name: raghu2-container
+          # Harness will replace this with the artifact image from CI.
+          image: nginx
+          ports:
+            - containerPort: 80
+       
