@@ -25,9 +25,4 @@ spec:
           image: us-central1-docker.pkg.dev/kubernetes-477004/php-app-repo/raghu:v2
           ports:
             - containerPort: 80
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 80
-            initialDelaySeconds: 5
-            periodSeconds: 5
+       
