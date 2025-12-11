@@ -22,7 +22,7 @@ spec:
       containers:
         - name: raghu-container
           # Harness will replace this with the artifact image from CI.
-          image: <+artifact.image>
+          image: us-central1-docker.pkg.dev/kubernetes-477004/php-app-repo/raghu:v2
           ports:
             - containerPort: 80
           readinessProbe:
